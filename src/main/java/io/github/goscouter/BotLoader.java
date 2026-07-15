@@ -21,7 +21,7 @@ public class BotLoader {
         final ObjectMapper mapper = new ObjectMapper();
         Config config = mapper.readValue(new File(CONFIG_FILE), Config.class);
 
-        JDA jda = JDABuilder.createDefault("token")
+        JDA jda = JDABuilder.createDefault(config.discordToken())
                 .addEventListeners(new ReadyListener(config))
                 .build();
 

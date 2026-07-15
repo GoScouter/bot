@@ -1,0 +1,10 @@
+services:
+  bot:
+    image: ghcr.io/goscouter/bot:main
+    container_name: gs-bot
+    pull_policy: always
+    restart: unless-stopped
+    environment:
+      STARTUP: "java -jar /app/gs-bot.jar"
+    volumes:
+      - ./data:/home/container

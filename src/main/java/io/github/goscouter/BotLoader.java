@@ -24,7 +24,13 @@ public class BotLoader {
         Config config = mapper.readValue(new File(CONFIG_FILE), Config.class);
 
         JDA jda = JDABuilder.createDefault(config.discordToken())
-                .enableIntents(GatewayIntent.GUILD_MEMBERS)
+                .enableIntents(
+                        GatewayIntent.GUILD_MEMBERS,
+                        GatewayIntent.GUILD_MESSAGES,
+                        GatewayIntent.MESSAGE_CONTENT,
+                        GatewayIntent.GUILD_PRESENCES,
+                        GatewayIntent.GUILD_VOICE_STATES
+                )
                 .addEventListeners(new ReadyListener(config), new WelcomeListener(config))
                 .build();
 

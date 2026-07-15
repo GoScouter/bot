@@ -8,7 +8,7 @@ RUN apk add --no-cache --update curl ca-certificates openssl git tar bash sqlite
 USER container
 ENV  USER=container HOME=/home/container
 
-ADD gs-bot.jar /app/
+ADD build/libs/gs-bot.jar /app/
 
 COPY entrypoint.sh /entrypoint.sh
 CMD ["/bin/bash", "/entrypoint.sh"]

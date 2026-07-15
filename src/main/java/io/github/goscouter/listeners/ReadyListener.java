@@ -18,7 +18,5 @@ public class ReadyListener extends ListenerAdapter {
 
         BotLoader.logger.info("Goscouter bot - ready!");
         BotLoader.logger.info("Token: {}", (this.config.discordToken().isEmpty() ? "No token was found" : "*****"));
-        BotLoader.logger.info("Welcome channel: {}", this.config.welcomeChannel());
-        BotLoader.logger.info("About channel: {}", this.config.aboutChannel());
     }
 }

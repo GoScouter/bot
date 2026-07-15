@@ -3,7 +3,6 @@ package io.github.goscouter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.goscouter.config.Config;
 import io.github.goscouter.listeners.ReadyListener;
-import io.github.goscouter.listeners.WelcomeListener;
 import lombok.SneakyThrows;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -31,7 +30,7 @@ public class BotLoader {
                         GatewayIntent.GUILD_PRESENCES,
                         GatewayIntent.GUILD_VOICE_STATES
                 )
-                .addEventListeners(new ReadyListener(config), new WelcomeListener(config))
+                .addEventListeners(new ReadyListener(config))
                 .build();
 
         jda.awaitReady();
